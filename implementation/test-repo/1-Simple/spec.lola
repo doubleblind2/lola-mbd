@@ -1,0 +1,8 @@
+in x: Real;
+in y: Bool;
+
+def a: Real = x + 5;
+def b: Bool = if y then a > 10 else a > 5;
+
+out a;
+out b;

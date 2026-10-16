@@ -1,0 +1,17 @@
+in x: Real;
+in y: Real;
+
+def sumX: Real;
+def sumY: Real;
+def comp: Bool;
+
+sumX = sumX[-1,0] + x;
+sumY = sumY[1,0] + y;
+comp = sumY > sumX;
+
+def ASSUMPTION: Bool;
+ASSUMPTION = (x <= 0) && (y >= 0);
+
+out sumX;
+out sumY;
+out comp;

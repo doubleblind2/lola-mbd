@@ -1,0 +1,32 @@
+in i1: Bool; %0
+in i2: Bool; %1
+in i3: Bool; %2
+in i4: Bool; %3
+
+comp c1; %8
+comp c2; %15
+comp c3; %16
+comp c4; %9
+comp c5; %10
+comp c6; %11
+comp c7; %12
+comp c8; %13
+
+internal o1: Bool;
+internal o2: Bool;
+internal o3: Bool;
+internal o4: Bool;
+internal o5: Bool;
+in o6: Bool;
+internal o7: Bool;
+internal o8: Bool;
+
+def ASSUMPTION: Bool =
+(!c1 -> o1 == (!i1 && o6[-1,false])) &&
+(!c2 -> o2 == (o7 || o1)) &&
+(!c3 -> o3 == (i4 || o1)) &&
+(!c4 -> o4 == !(o2 && o3)) &&
+(!c5 -> o5 == !(!i0 || o6)) &&
+(!c6 -> o6 == !(o5[-1,false] || o4)) &&
+(!c7 -> o7 == !(i2 || o8[-1,false])) &&
+(!c8 -> o8 == !(i3 || o7));

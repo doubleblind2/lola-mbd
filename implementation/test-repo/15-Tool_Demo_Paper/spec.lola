@@ -1,0 +1,15 @@
+in x: Real;
+
+def y: Real = y[-1,0] + x - x[-3,0];
+def ok: Bool = y <= 30;
+def stays_ok: Bool = ok && stays_ok[+1,true];
+
+out y;
+out ok;
+out stays_ok;
+
+def ASSUMPTION: Bool = x[+1,0] - 5 <= x && x <= x[+1,0] + 5 && x >= 0 && x <= 20;
+
+def nextX: Real = x[+1,0];
+nextX linked with stays_ok;
+out nextX;

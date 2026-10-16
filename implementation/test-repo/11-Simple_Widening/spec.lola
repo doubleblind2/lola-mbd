@@ -1,0 +1,13 @@
+in x: Real;
+
+def a: Real;
+def nextA: Real;
+
+a = a[1, 0] + x;
+nextA = a[1, 0];
+
+def ASSUMPTION: Bool;
+ASSUMPTION = x >= 1 && x <= 10;
+
+out a;
+out nextA;

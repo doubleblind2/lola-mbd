@@ -1,0 +1,21 @@
+(declare-fun x^-1 () Real)
+(declare-fun x^0 () Real)
+(declare-fun x^1 () Real)
+(declare-fun dx^-1 () Real)
+(declare-fun dx^0 () Real)
+(declare-fun dx^1 () Real)
+(declare-fun ASSUMPTION^0 () Bool)
+(declare-fun ASSUMPTION^1 () Bool)
+
+
+(assert (exists ((dx^1 Real)
+         (x^0 Real)
+         (ASSUMPTION^1 Bool)
+         (x^1 Real)
+         (ASSUMPTION^0 Bool)
+         (dx^0 Real))
+  (let ((a!1 (and (<= (+ dx^0 (* (- 1.0) dx^-1)) 1.0)
+                  (>= (+ dx^0 (* (- 1.0) dx^-1)) (- 1.0)))))
+    (and (= x^0 (+ x^-1 dx^0)) (= ASSUMPTION^0 a!1) ASSUMPTION^0 true))))
+
+(apply (then simplify ctx-solver-simplify))

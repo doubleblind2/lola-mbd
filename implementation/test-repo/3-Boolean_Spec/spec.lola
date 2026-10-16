@@ -1,0 +1,10 @@
+in x: Bool;
+in y: Bool;
+
+def a: Bool = x[-1, false] || x[-2, false];
+def b: Bool = x[-1, false];
+def c: Bool = a || (b <-> y);
+
+out a;
+out b;
+out c;

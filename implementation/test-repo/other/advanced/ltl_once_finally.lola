@@ -1,0 +1,9 @@
+in p: Bool;
+
+def fp: Bool;
+def ofp: Bool;
+
+fp = p || fp[1,false];
+ofp = fp || ofp[-1,false];
+
+out ofp;

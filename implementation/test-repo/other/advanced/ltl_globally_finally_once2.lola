@@ -1,0 +1,13 @@
+in p: Bool;
+
+def Op: Bool;
+def FOp: Bool;
+def piFOp: Bool;
+def GpiFOp: Bool;
+
+Op = p || Op[-1,false];
+FOp = Op || FOp[1,false];
+piFOp = p -> FOp;
+GpiFOp = piFOp && GpiFOp[1,true];
+
+out GpiFOp;

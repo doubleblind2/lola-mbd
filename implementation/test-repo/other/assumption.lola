@@ -1,0 +1,19 @@
+in x: Real;
+in y: Real;
+
+def sum: Real;
+sum = sum[-1, 0] + x;
+  
+def verdict: Bool;
+verdict = sum >= y;
+
+def ASSUMPTION: Bool;
+ASSUMPTION = x >= (x[-1,0] + 1);
+
+out sum;
+out verdict;  
+
+def nx: Real;
+nx = sum[1,1000];
+
+out nx;

@@ -1,0 +1,11 @@
+in x: Real;
+
+def a: Real = a[1, 0] + x;
+def b: Real = b[1, 0] + 2 * x;
+def c: Real = 2 * a - b;
+
+def ASSUMPTION: Bool = x >= 0;
+
+out a;
+out b;
+out c;

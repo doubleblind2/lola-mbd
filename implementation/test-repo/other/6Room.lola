@@ -1,0 +1,80 @@
+internal e: Real;
+in r: Real;
+in eCurr: Real;
+
+internal e0: Real;
+internal e1: Real;
+internal e2: Real;
+internal e3: Real;
+internal e4: Real;
+internal e5: Real;
+
+def consumption: Bool;
+consumption = ((e[-1,0] - e) == 5);
+
+def gConsumption: Bool;
+gConsumption = gConsumption[1,true] && consumption;
+
+def error: Bool;
+error = (!(r == 0)) && (e <= 5);
+
+def deadEnd: Bool;
+deadEnd = (!(r == 0)) && (deadEnd[1,true]);
+
+def fError: Bool;
+fError = error || deadEnd || fError[1,false];
+
+def ASSUMPTION: Bool;
+ASSUMPTION = (((r == 0) || (r == 1) || (r == 2) || (r == 3) || (r == 4) || (r == 5))) &&
+             (((((r[-1,0] == 0)) -> ((r == 1) || (r == 4) || (r == 0))) && (((r[-1,6] == 5)) -> ((r == 5) || (r == 1) || (r == 2) || (r == 4))) && (((r[-1,2] == 1)) -> ((r == 0) || (r == 5) || (r == 1) || (r == 2))) && (((r[-1,3] == 2)) -> ((r == 5) || (r == 1) || (r == 2) || (r == 3))) && (((r[-1,4] == 3)) -> ((r == 2) || (r == 3))) && (((r[-1,5] == 4)) -> ((r == 0) || (r == 5) || (r == 4)))));
+
+
+out fError;
+
+def n0: Bool;
+n0 = ((r[1,1] == 0) && (!fError) && gConsumption[1,true]) && e0 == e;
+out n0;
+
+def n1: Bool;
+n1 = ((r[1,2] == 1) && (!fError) && gConsumption[1,true]) && e1 == e;
+out n1;
+
+def n2: Bool;
+n2 = ((r[1,3] == 2) && (!fError) && gConsumption[1,true]) && e2 == e;
+out n2;
+
+def n3: Bool;
+n3 = ((r[1,4] == 3) && (!fError) && gConsumption[1,true]) && e3 == e;
+out n3;
+
+def n4: Bool;
+n4 = ((r[1,5] == 4) && (!fError) && gConsumption[1,true]) && e4 == e;
+out n4;
+
+def n5: Bool;
+n5 = ((r[1,6] == 5) && (!fError) && gConsumption[1,true]) && e5 == e;
+out n5;
+
+def e0O: Real = eCurr - e0;
+def e1O: Real = eCurr - e1;
+def e2O: Real = eCurr - e2;
+def e3O: Real = eCurr - e3;
+def e4O: Real = eCurr - e4;
+def e5O: Real = eCurr - e5;
+
+e0O linked with n0;
+e1O linked with n1;
+e2O linked with n2;
+e3O linked with n3;
+e4O linked with n4;
+e5O linked with n5;
+
+
+out e;
+out e0O;
+out e1O;
+out e2O;
+out e3O;
+out e4O;
+out e5O;
+

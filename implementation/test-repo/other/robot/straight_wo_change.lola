@@ -1,0 +1,39 @@
+in dx: Real;
+in dy: Real;
+
+def ff: Bool;
+ff = false;
+
+def x: Real;
+def y: Real;
+x = x[-1,0] + dx;
+y = y[-1,0] + dy;
+
+def col: Bool;
+def Fcol: Bool;
+col = (x >= -10) && (x <= 10) && (y >= 3) && (y <= 10);
+Fcol = col || Fcol[1,false];
+
+def straight: Bool;
+def Gstraight: Bool;
+def FcolStraight: Bool;
+straight = ff[1,true] || ((dx[1,0] == dx) && (dy[1,0] == dy));
+Gstraight = straight && Gstraight[1,true];
+FcolStraight = Gstraight -> Fcol;
+
+out x;
+out y;
+out col;
+out Fcol;
+out straight;
+out Gstraight;
+out FcolStraight;
+
+
+#Assumptions
+
+def maxVelocity: Bool;
+maxVelocity = (dx <= 8) && (dx >= -8) && (dy <= 8) && (dy >= -8);
+
+def ASSUMPTION: Bool;
+ASSUMPTION = maxVelocity;

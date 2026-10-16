@@ -1,0 +1,47 @@
+in g0: Bool;
+in g1: Bool;
+in g2: Bool;
+in g3: Bool;
+
+comp c5;
+comp c6;
+comp c7;
+comp c14;
+comp c17;
+comp c8;
+comp c15;
+comp c16;
+comp c9;
+comp c10;
+comp c11;
+comp c12;
+comp c13;
+
+internal g5: Bool;
+internal g6: Bool;
+internal g7: Bool;
+internal g14: Bool;
+in g17: Bool;
+internal g8: Bool;
+internal g15: Bool;
+internal g16: Bool;
+internal g9: Bool;
+internal g10: Bool;
+internal g11: Bool;
+internal g12: Bool;
+internal g13: Bool;
+
+def ASSUMPTION: Bool =
+(!c5 -> (g5 == g10[-1,false])) &&
+(!c6 -> (g6 == g11[-1,false])) &&
+(!c7 -> (g7 == g13[-1,false])) &&
+(!c14 -> (g14 == !g0)) &&
+(!c17 -> (g17 == !g11)) &&
+(!c8 -> (g8 == (g14 && g6))) &&
+(!c15 -> (g15 == (g12 || g8))) &&
+(!c16 -> (g16 == (g3 || g8))) &&
+(!c9 -> (g9 == !(g16 && g15))) &&
+(!c10 -> (g10 == !(g14 || g11))) &&
+(!c10 -> (g11 == !(g5 || g9))) &&
+(!c12 -> (g12 == !(g1 || g7))) &&
+(!c13 -> (g13 == !(g2 || g12)));

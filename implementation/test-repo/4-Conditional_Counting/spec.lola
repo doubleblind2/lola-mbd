@@ -1,0 +1,10 @@
+in input: Real;
+in isA: Bool;
+
+def sumA: Real = sumA[-1,0] + (if isA then input else 0);
+def sumB: Real = sumB[-1,0] + (if (!isA) then input else 0);
+def equal: Bool = (sumA == sumB);
+
+out sumA;
+out sumB;
+out equal;

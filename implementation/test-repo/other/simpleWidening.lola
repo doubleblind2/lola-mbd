@@ -1,0 +1,2 @@
+def a: Real = a[+1,0] + 1;
+out a;

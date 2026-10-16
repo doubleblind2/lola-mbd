@@ -1,0 +1,666 @@
+2023-10-17 16:03:22.494058000 | DEBUG | Info: State after transformation = 
+Z3CombiConstraintState(ts = 49){
+
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:22.548763000 | DEBUG | Info: State after reverse specification application = 
+Z3CombiConstraintState(ts = 49){
+(= x^0 (+ x^-1 dx^0)),
+(= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0))),
+ASSUMPTION^0,
+(let ((a!1 (and (< (+ dx^0 (* (- 1.0) dx^-1)) 1.0)
+                (> (+ dx^0 (* (- 1.0) dx^-1)) (- 1.0)))))
+  (= maxChange^0 a!1)),
+(= ASSUMPTION^0 (and maxVelocity^0 maxChange^0))
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:22.549270000 | DEBUG | Info: Beginn iterative QE. |  
+2023-10-17 16:03:22.559564000 | DEBUG | Info: Perform QE for HashSet(ASSUMPTION^1, maxVelocity^0, maxChange^0, x^0, ASSUMPTION^0, dx^1, maxChange^1, maxVelocity^1, dx^0, x^1) on (let ((a!1 (and (< (+ dx^0 (* (- 1.0) dx^-1)) 1.0)
+                (> (+ dx^0 (* (- 1.0) dx^-1)) (- 1.0)))))
+  (and (= x^0 (+ x^-1 dx^0))
+       (= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0)))
+       ASSUMPTION^0
+       (= maxChange^0 a!1)
+       (= ASSUMPTION^0 (and maxVelocity^0 maxChange^0))
+       true)) |  
+2023-10-17 16:03:22.571670000 | DEBUG | Info: Finished iterative QE. |  
+2023-10-17 16:03:22.572614000 | DEBUG | Info: State after cleanup = 
+Z3CombiConstraintState(ts = 49){
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:22.575958000 | DEBUG | Info: State after transformation = 
+Z3CombiConstraintState(ts = 48){
+(and (not (<= dx^0 (- 6.0))) (not (>= dx^0 6.0)))
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:22.587465000 | DEBUG | Info: State after reverse specification application = 
+Z3CombiConstraintState(ts = 48){
+(= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0))),
+ASSUMPTION^0,
+(and (not (<= dx^0 (- 6.0))) (not (>= dx^0 6.0))),
+(= x^0 (+ x^-1 dx^0)),
+(let ((a!1 (and (< (+ dx^0 (* (- 1.0) dx^-1)) 1.0)
+                (> (+ dx^0 (* (- 1.0) dx^-1)) (- 1.0)))))
+  (= maxChange^0 a!1)),
+(= ASSUMPTION^0 (and maxVelocity^0 maxChange^0))
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:22.587850000 | DEBUG | Info: Beginn iterative QE. |  
+2023-10-17 16:03:22.588919000 | DEBUG | Info: Perform QE for HashSet(ASSUMPTION^1, maxVelocity^0, maxChange^0, x^0, ASSUMPTION^0, dx^1, maxChange^1, maxVelocity^1, dx^0, x^1) on (let ((a!1 (and (< (+ dx^0 (* (- 1.0) dx^-1)) 1.0)
+                (> (+ dx^0 (* (- 1.0) dx^-1)) (- 1.0)))))
+  (and (= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0)))
+       ASSUMPTION^0
+       (not (<= dx^0 (- 6.0)))
+       (not (>= dx^0 6.0))
+       (= x^0 (+ x^-1 dx^0))
+       (= maxChange^0 a!1)
+       (= ASSUMPTION^0 (and maxVelocity^0 maxChange^0))
+       true)) |  
+2023-10-17 16:03:22.599818000 | DEBUG | Info: Finished iterative QE. |  
+2023-10-17 16:03:22.600870000 | DEBUG | Info: State after cleanup = 
+Z3CombiConstraintState(ts = 48){
+(and (or (not (<= 6.0 dx^-1)) (not (>= dx^-1 4.0))) (not (<= dx^-1 (- 6.0))))
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:22.610837000 | DEBUG | Info: Beginn iterative QE. |  
+2023-10-17 16:03:22.611560000 | DEBUG | Info: Perform QE for HashSet(ASSUMPTION^1, maxVelocity^0, maxChange^0, x^0, ASSUMPTION^0, dx^1, maxChange^1, maxVelocity^1, dx^0, x^1) on and |  
+2023-10-17 16:03:22.613484000 | DEBUG | Info: Finished iterative QE. |  
+2023-10-17 16:03:22.613829000 | DEBUG | Info: Beginn iterative QE. |  
+2023-10-17 16:03:22.614380000 | DEBUG | Info: Perform QE for HashSet(ASSUMPTION^1, maxVelocity^0, maxChange^0, x^0, ASSUMPTION^0, dx^1, maxChange^1, maxVelocity^1, dx^0, x^1) on and |  
+2023-10-17 16:03:22.616251000 | DEBUG | Info: Finished iterative QE. |  
+2023-10-17 16:03:22.625148000 | TECHNICAL_LOG | Info: Future estimation consisting of 1 states has been computed. Took: 394640 μs |  
+2023-10-17 16:03:22.626675000 | DEBUG | Info: FutureEstimation returned future:
+Future states (starting from last timestamp):
+0:
+
+Z3CombiConstraintState(ts = 49){
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+
+Last state loops to state 0
+
+ |  
+2023-10-17 16:03:22.627281000 | TECHNICAL_LOG | Info: Ready for evaluation! |  
+2023-10-17 16:03:30.693096000 | TECHNICAL_LOG | Info: Input received: dx=? |  
+2023-10-17 16:03:30.695108000 | DEBUG | Info: Beginn iterative QE. |  
+2023-10-17 16:03:30.695595000 | DEBUG | Info: Perform QE for HashSet(dx^-1, maxVelocity^-1, maxVelocity^0, maxChange^0, ASSUMPTION^-1, x^-1, ASSUMPTION^0, maxChange^-1) on true |  
+2023-10-17 16:03:30.696949000 | DEBUG | Info: Finished iterative QE. |  
+2023-10-17 16:03:30.697607000 | DEBUG | Info: State after cleanup = 
+Z3CombiConstraintState(ts = -1){
+true
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:30.698472000 | DEBUG | Info: Inserted the following future state: 
+Z3CombiConstraintState(ts = 1){
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:30.702421000 | DEBUG | Info: State after input reading = 
+Z3CombiConstraintState(ts = 0){
+true
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map()
+--
+Map()
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^0 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:30.734468000 | DEBUG | Info: State after specification application = 
+Z3CombiConstraintState(ts = 0){
+(= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0))),
+ASSUMPTION^0,
+(= x^0 (+ 0.0 dx^0)),
+(let ((a!1 (and (< (+ dx^0 (* (- 1.0) 0.0)) 1.0)
+                (> (+ dx^0 (* (- 1.0) 0.0)) (- 1.0)))))
+  (= maxChange^0 a!1)),
+(= ASSUMPTION^0 (and maxVelocity^0 maxChange^0)),
+true
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0)
+--
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0)
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^0 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:30.734714000 | TECHNICAL_LOG | Info: Simplification took 2749 μs, Evaluation took 36904 μs |  
+2023-10-17 16:03:30.744782000 | DEBUG | Info: rangeBoundQuery called for 1.0 * dx^0 |  
+2023-10-17 16:03:30.744965000 | DEBUG | Info: Not in cache! |  
+2023-10-17 16:03:30.749011000 | DEBUG | Info: z3BoundQuery called for x^0 |  
+2023-10-17 16:03:30.749196000 | DEBUG | Info: Not in cache! |  
+2023-10-17 16:03:30.749348000 | DEBUG | Info: z3BoundQuery: x^0 |  
+2023-10-17 16:03:30.752924000 | DEBUG | Info: -> min: (+ (- 1.0) epsilon) |  
+2023-10-17 16:03:30.755344000 | DEBUG | Info: -> max: (+ 1.0 (* (- 1.0) epsilon)) |  
+2023-10-17 16:03:30.760342000 | DEBUG | Info: rangeBound: (None,None) |  
+2023-10-17 16:03:30.760581000 | DEBUG | Info: z3Bound: (Some(-1.0),Some(1.0)) |  
+2023-10-17 16:03:30.760717000 | DEBUG | Info: Query result (Some(-1.0),Some(1.0)) |  
+2023-10-17 16:03:36.369157000 | TECHNICAL_LOG | Info: Input received: dx=? |  
+2023-10-17 16:03:36.369769000 | DEBUG | Info: Beginn iterative QE. |  
+2023-10-17 16:03:36.370578000 | DEBUG | Info: Perform QE for HashSet(dx^-1, maxVelocity^-1, maxVelocity^0, maxChange^0, ASSUMPTION^-1, x^-1, ASSUMPTION^0, maxChange^-1) on (let ((a!1 (and (< (+ dx^0 (* (- 1.0) 0.0)) 1.0)
+                (> (+ dx^0 (* (- 1.0) 0.0)) (- 1.0)))))
+  (and (= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0)))
+       ASSUMPTION^0
+       (= x^0 (+ 0.0 dx^0))
+       (= maxChange^0 a!1)
+       (= ASSUMPTION^0 (and maxVelocity^0 maxChange^0))
+       true
+       (not (<= dx^0 (- 6.0)))
+       (not (>= dx^0 6.0))
+       true)) |  
+2023-10-17 16:03:36.378661000 | DEBUG | Info: Finished iterative QE. |  
+2023-10-17 16:03:36.380267000 | DEBUG | Info: State after cleanup = 
+Z3CombiConstraintState(ts = 0){
+(let ((a!1 (not (<= (+ dx^0 (* (- 1.0) 0.0)) (- 1.0)))))
+  (and (= x^0 dx^0)
+       a!1
+       (not (>= dx^0 1.0))
+       (not (>= 0.0 2.0))
+       (not (<= 2.0 0.0))))
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0)
+--
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0)
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^0 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:36.386390000 | DEBUG | Info: Inserted the following future state: 
+Z3CombiConstraintState(ts = 2){
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:36.387881000 | DEBUG | Info: State after input reading = 
+Z3CombiConstraintState(ts = 1){
+(let ((a!1 (not (<= (+ dx^-1 (* (- 1.0) 0.0)) (- 1.0)))))
+  (and (= x^-1 dx^-1)
+       a!1
+       (not (>= dx^-1 1.0))
+       (not (>= 0.0 2.0))
+       (not (<= 2.0 0.0))))
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map(dx -> 1.0 * dx^-1, x -> 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^-1, x -> 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^-1 -> (None,None), dx^0 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:36.403713000 | DEBUG | Info: State after specification application = 
+Z3CombiConstraintState(ts = 1){
+(= x^0 (+ x^-1 dx^0)),
+(= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0))),
+ASSUMPTION^0,
+(let ((a!1 (not (<= (+ dx^-1 (* (- 1.0) 0.0)) (- 1.0)))))
+  (and (= x^-1 dx^-1)
+       a!1
+       (not (>= dx^-1 1.0))
+       (not (>= 0.0 2.0))
+       (not (<= 2.0 0.0)))),
+(let ((a!1 (and (< (+ dx^0 (* (- 1.0) dx^-1)) 1.0)
+                (> (+ dx^0 (* (- 1.0) dx^-1)) (- 1.0)))))
+  (= maxChange^0 a!1)),
+(= ASSUMPTION^0 (and maxVelocity^0 maxChange^0))
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0 + 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0 + 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^0 -> (None,None), dx^-1 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:36.403968000 | TECHNICAL_LOG | Info: Simplification took 10792 μs, Evaluation took 23430 μs |  
+2023-10-17 16:03:36.414472000 | DEBUG | Info: rangeBoundQuery called for 1.0 * dx^0 + 1.0 * dx^-1 |  
+2023-10-17 16:03:36.414670000 | DEBUG | Info: Not in cache! |  
+2023-10-17 16:03:36.414875000 | DEBUG | Info: z3BoundQuery called for x^0 |  
+2023-10-17 16:03:36.414956000 | DEBUG | Info: Not in cache! |  
+2023-10-17 16:03:36.415067000 | DEBUG | Info: z3BoundQuery: x^0 |  
+2023-10-17 16:03:36.417020000 | DEBUG | Info: -> min: (+ (- 3.0) (* 3.0 epsilon)) |  
+2023-10-17 16:03:36.419005000 | DEBUG | Info: -> max: (+ 3.0 (* (- 3.0) epsilon)) |  
+2023-10-17 16:03:36.419971000 | DEBUG | Info: rangeBound: (None,None) |  
+2023-10-17 16:03:36.420168000 | DEBUG | Info: z3Bound: (Some(-3.0),Some(3.0)) |  
+2023-10-17 16:03:36.420322000 | DEBUG | Info: Query result (Some(-3.0),Some(3.0)) |  
+2023-10-17 16:03:39.415763000 | TECHNICAL_LOG | Info: Input received: dx=? |  
+2023-10-17 16:03:39.416315000 | DEBUG | Info: Beginn iterative QE. |  
+2023-10-17 16:03:39.417392000 | DEBUG | Info: Perform QE for HashSet(dx^-1, maxVelocity^-1, maxVelocity^0, maxChange^0, ASSUMPTION^-1, x^-1, ASSUMPTION^0, maxChange^-1) on (let ((a!1 (not (<= (+ dx^-1 (* (- 1.0) 0.0)) (- 1.0))))
+      (a!2 (and (< (+ dx^0 (* (- 1.0) dx^-1)) 1.0)
+                (> (+ dx^0 (* (- 1.0) dx^-1)) (- 1.0)))))
+  (and (= x^0 (+ x^-1 dx^0))
+       (= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0)))
+       ASSUMPTION^0
+       (= x^-1 dx^-1)
+       a!1
+       (not (>= dx^-1 1.0))
+       (not (>= 0.0 2.0))
+       (not (<= 2.0 0.0))
+       (= maxChange^0 a!2)
+       (= ASSUMPTION^0 (and maxVelocity^0 maxChange^0))
+       (not (<= dx^0 (- 6.0)))
+       (not (>= dx^0 6.0))
+       true)) |  
+2023-10-17 16:03:39.428971000 | DEBUG | Info: Finished iterative QE. |  
+2023-10-17 16:03:39.431107000 | DEBUG | Info: State after cleanup = 
+Z3CombiConstraintState(ts = 1){
+(let ((a!1 (not (>= (+ dx^0 (* (- 1.0) x^0)) 1.0)))
+      (a!2 (not (>= (+ (* 2.0 dx^0) (* (- 1.0) x^0)) 1.0)))
+      (a!3 (not (>= (+ (* (- 1.0) dx^0) x^0) 1.0)))
+      (a!4 (not (>= (+ (* (- 2.0) dx^0) x^0) 1.0))))
+  (and (not (>= dx^0 (/ 35.0 16.0)))
+       a!1
+       (not (<= x^0 (- (/ 99.0 32.0))))
+       (not (>= x^0 (/ 51.0 16.0)))
+       a!2
+       a!3
+       a!4))
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0 + 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0 + 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^0 -> (None,None), dx^-1 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:39.433139000 | DEBUG | Info: Inserted the following future state: 
+Z3CombiConstraintState(ts = 3){
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:39.435108000 | DEBUG | Info: State after input reading = 
+Z3CombiConstraintState(ts = 2){
+(let ((a!1 (not (>= (+ dx^-1 (* (- 1.0) x^-1)) 1.0)))
+      (a!2 (not (>= (+ (* 2.0 dx^-1) (* (- 1.0) x^-1)) 1.0)))
+      (a!3 (not (>= (+ (* (- 1.0) dx^-1) x^-1) 1.0)))
+      (a!4 (not (>= (+ (* (- 2.0) dx^-1) x^-1) 1.0))))
+  (and (not (>= dx^-1 (/ 35.0 16.0)))
+       a!1
+       (not (<= x^-1 (- (/ 99.0 32.0))))
+       (not (>= x^-1 (/ 51.0 16.0)))
+       a!2
+       a!3
+       a!4))
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map(dx -> 1.0 * dx^-1, x -> 1.0 * dx^-1 + 1.0 * dx^-2)
+--
+Map(dx -> 1.0 * dx^-1, x -> 1.0 * dx^-1 + 1.0 * dx^-2)
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^-1 -> (None,None), dx^-2 -> (None,None), dx^0 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:39.448931000 | DEBUG | Info: State after specification application = 
+Z3CombiConstraintState(ts = 2){
+(= x^0 (+ x^-1 dx^0)),
+(= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0))),
+(let ((a!1 (not (>= (+ dx^-1 (* (- 1.0) x^-1)) 1.0)))
+      (a!2 (not (>= (+ (* 2.0 dx^-1) (* (- 1.0) x^-1)) 1.0)))
+      (a!3 (not (>= (+ (* (- 1.0) dx^-1) x^-1) 1.0)))
+      (a!4 (not (>= (+ (* (- 2.0) dx^-1) x^-1) 1.0))))
+  (and (not (>= dx^-1 (/ 35.0 16.0)))
+       a!1
+       (not (<= x^-1 (- (/ 99.0 32.0))))
+       (not (>= x^-1 (/ 51.0 16.0)))
+       a!2
+       a!3
+       a!4)),
+ASSUMPTION^0,
+(let ((a!1 (and (< (+ dx^0 (* (- 1.0) dx^-1)) 1.0)
+                (> (+ dx^0 (* (- 1.0) dx^-1)) (- 1.0)))))
+  (= maxChange^0 a!1)),
+(= ASSUMPTION^0 (and maxVelocity^0 maxChange^0))
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0 + 1.0 * dx^-2 + 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0 + 1.0 * dx^-2 + 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^0 -> (None,None), dx^-1 -> (None,None), dx^-2 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:39.449129000 | TECHNICAL_LOG | Info: Simplification took 15268 μs, Evaluation took 17577 μs |  
+2023-10-17 16:03:39.458427000 | DEBUG | Info: rangeBoundQuery called for 1.0 * dx^0 + 1.0 * dx^-2 + 1.0 * dx^-1 |  
+2023-10-17 16:03:39.458606000 | DEBUG | Info: Not in cache! |  
+2023-10-17 16:03:39.458825000 | DEBUG | Info: z3BoundQuery called for x^0 |  
+2023-10-17 16:03:39.458921000 | DEBUG | Info: Not in cache! |  
+2023-10-17 16:03:39.459037000 | DEBUG | Info: z3BoundQuery: x^0 |  
+2023-10-17 16:03:39.463374000 | DEBUG | Info: -> min: -6/7 |  
+2023-10-17 16:03:39.467056000 | DEBUG | Info: -> max: 9/2 |  
+2023-10-17 16:03:39.468681000 | DEBUG | Info: rangeBound: (None,None) |  
+2023-10-17 16:03:39.468938000 | DEBUG | Info: z3Bound: (Some(-0.8571428571428571),Some(4.5)) |  
+2023-10-17 16:03:39.469102000 | DEBUG | Info: Query result (Some(-0.8571428571428571),Some(4.5)) |  
+2023-10-17 16:03:41.74277000 | TECHNICAL_LOG | Info: Input received: dx=? |  
+2023-10-17 16:03:41.74943000 | DEBUG | Info: Beginn iterative QE. |  
+2023-10-17 16:03:41.77210000 | DEBUG | Info: Perform QE for HashSet(dx^-1, maxVelocity^-1, maxVelocity^0, maxChange^0, ASSUMPTION^-1, x^-1, ASSUMPTION^0, maxChange^-1) on (let ((a!1 (not (>= (+ dx^-1 (* (- 1.0) x^-1)) 1.0)))
+      (a!2 (not (>= (+ (* 2.0 dx^-1) (* (- 1.0) x^-1)) 1.0)))
+      (a!3 (not (>= (+ (* (- 1.0) dx^-1) x^-1) 1.0)))
+      (a!4 (not (>= (+ (* (- 2.0) dx^-1) x^-1) 1.0)))
+      (a!5 (and (< (+ dx^0 (* (- 1.0) dx^-1)) 1.0)
+                (> (+ dx^0 (* (- 1.0) dx^-1)) (- 1.0)))))
+  (and (= x^0 (+ x^-1 dx^0))
+       (= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0)))
+       (not (>= dx^-1 (/ 35.0 16.0)))
+       a!1
+       (not (<= x^-1 (- (/ 99.0 32.0))))
+       (not (>= x^-1 (/ 51.0 16.0)))
+       a!2
+       a!3
+       a!4
+       ASSUMPTION^0
+       (= maxChange^0 a!5)
+       (= ASSUMPTION^0 (and maxVelocity^0 maxChange^0))
+       (not (<= dx^0 (- 6.0)))
+       (not (>= dx^0 6.0))
+       true)) |  
+2023-10-17 16:03:41.101928000 | DEBUG | Info: Finished iterative QE. |  
+2023-10-17 16:03:41.103957000 | DEBUG | Info: State after cleanup = 
+Z3CombiConstraintState(ts = 2){
+(let ((a!1 (not (>= (+ (* (/ 1.0 2.0) dx^0) (* (- (/ 1.0 2.0)) x^0))
+                    (/ 3.0 2.0))))
+      (a!2 (not (>= (+ (* (- (/ 3.0 2.0)) dx^0) (* (/ 1.0 2.0) x^0))
+                    (/ 3.0 2.0))))
+      (a!3 (not (>= (+ (* 3.0 dx^0) (* (- 1.0) x^0)) 3.0)))
+      (a!4 (not (>= (+ (* (- 1.0) dx^0) x^0) 3.0)))
+      (a!5 (not (>= (+ (* (- 2.0) dx^0) x^0) 2.0)))
+      (a!6 (not (>= (+ (* 2.0 dx^0) (* (- 1.0) x^0)) 2.0))))
+  (and (not (>= dx^0 (/ 51.0 16.0)))
+       a!1
+       (not (<= x^0 (- (/ 164.0 27.0))))
+       (not (>= x^0 (/ 99.0 16.0)))
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6))
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0 + 1.0 * dx^-2 + 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0 + 1.0 * dx^-2 + 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^0 -> (None,None), dx^-1 -> (None,None), dx^-2 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:41.105665000 | DEBUG | Info: Inserted the following future state: 
+Z3CombiConstraintState(ts = 4){
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+-------
+
+#######
+
+Map()
+--
+Map()
+--
+Map()
+--
+Map()
+
+}
+ |  
+2023-10-17 16:03:41.107491000 | DEBUG | Info: State after input reading = 
+Z3CombiConstraintState(ts = 3){
+(let ((a!1 (not (>= (+ (* (/ 1.0 2.0) dx^-1) (* (- (/ 1.0 2.0)) x^-1))
+                    (/ 3.0 2.0))))
+      (a!2 (not (>= (+ (* (- (/ 3.0 2.0)) dx^-1) (* (/ 1.0 2.0) x^-1))
+                    (/ 3.0 2.0))))
+      (a!3 (not (>= (+ (* 3.0 dx^-1) (* (- 1.0) x^-1)) 3.0)))
+      (a!4 (not (>= (+ (* (- 1.0) dx^-1) x^-1) 3.0)))
+      (a!5 (not (>= (+ (* (- 2.0) dx^-1) x^-1) 2.0)))
+      (a!6 (not (>= (+ (* 2.0 dx^-1) (* (- 1.0) x^-1)) 2.0))))
+  (and (not (>= dx^-1 (/ 51.0 16.0)))
+       a!1
+       (not (<= x^-1 (- (/ 164.0 27.0))))
+       (not (>= x^-1 (/ 99.0 16.0)))
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6))
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map(dx -> 1.0 * dx^-1, x -> 1.0 * dx^-1 + 1.0 * dx^-3 + 1.0 * dx^-2)
+--
+Map(dx -> 1.0 * dx^-1, x -> 1.0 * dx^-1 + 1.0 * dx^-3 + 1.0 * dx^-2)
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^-1 -> (None,None), dx^-2 -> (None,None), dx^-3 -> (None,None), dx^0 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:41.122241000 | DEBUG | Info: State after specification application = 
+Z3CombiConstraintState(ts = 3){
+(= x^0 (+ x^-1 dx^0)),
+(= maxVelocity^0 (and (> dx^0 (- 5.0)) (< dx^0 5.0))),
+(let ((a!1 (not (>= (+ (* (/ 1.0 2.0) dx^-1) (* (- (/ 1.0 2.0)) x^-1))
+                    (/ 3.0 2.0))))
+      (a!2 (not (>= (+ (* (- (/ 3.0 2.0)) dx^-1) (* (/ 1.0 2.0) x^-1))
+                    (/ 3.0 2.0))))
+      (a!3 (not (>= (+ (* 3.0 dx^-1) (* (- 1.0) x^-1)) 3.0)))
+      (a!4 (not (>= (+ (* (- 1.0) dx^-1) x^-1) 3.0)))
+      (a!5 (not (>= (+ (* (- 2.0) dx^-1) x^-1) 2.0)))
+      (a!6 (not (>= (+ (* 2.0 dx^-1) (* (- 1.0) x^-1)) 2.0))))
+  (and (not (>= dx^-1 (/ 51.0 16.0)))
+       a!1
+       (not (<= x^-1 (- (/ 164.0 27.0))))
+       (not (>= x^-1 (/ 99.0 16.0)))
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6)),
+ASSUMPTION^0,
+(let ((a!1 (and (< (+ dx^0 (* (- 1.0) dx^-1)) 1.0)
+                (> (+ dx^0 (* (- 1.0) dx^-1)) (- 1.0)))))
+  (= maxChange^0 a!1)),
+(= ASSUMPTION^0 (and maxVelocity^0 maxChange^0))
+-------
+(and (not (<= dx^-1 (- 6.0))) (not (>= dx^-1 6.0)))
+#######
+
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0 + 1.0 * dx^-2 + 1.0 * dx^-3 + 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0, x -> 1.0 * dx^0 + 1.0 * dx^-2 + 1.0 * dx^-3 + 1.0 * dx^-1)
+--
+Map(dx -> 1.0 * dx^0)
+--
+Map(dx^0 -> (None,None), dx^-1 -> (None,None), dx^-2 -> (None,None), dx^-3 -> (None,None))
+
+}
+ |  
+2023-10-17 16:03:41.122446000 | TECHNICAL_LOG | Info: Simplification took 29267 μs, Evaluation took 18279 μs |  
+2023-10-17 16:03:41.132592000 | DEBUG | Info: rangeBoundQuery called for 1.0 * dx^0 + 1.0 * dx^-2 + 1.0 * dx^-3 + 1.0 * dx^-1 |  
+2023-10-17 16:03:41.132799000 | DEBUG | Info: Not in cache! |  
+2023-10-17 16:03:41.133039000 | DEBUG | Info: z3BoundQuery called for x^0 |  
+2023-10-17 16:03:41.133153000 | DEBUG | Info: Not in cache! |  
+2023-10-17 16:03:41.133297000 | DEBUG | Info: z3BoundQuery: x^0 |  
+2023-10-17 16:03:41.136943000 | DEBUG | Info: -> min: -33/4 |  
+2023-10-17 16:03:41.139881000 | DEBUG | Info: -> max: 8 |  
+2023-10-17 16:03:41.140874000 | DEBUG | Info: rangeBound: (None,None) |  
+2023-10-17 16:03:41.141111000 | DEBUG | Info: z3Bound: (Some(-8.25),Some(8.0)) |  
+2023-10-17 16:03:41.141293000 | DEBUG | Info: Query result (Some(-8.25),Some(8.0)) |  

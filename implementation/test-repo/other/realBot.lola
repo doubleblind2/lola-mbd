@@ -1,0 +1,4 @@
+internal i_R: Real;
+internal i_B: Bool;
+
+i_R linked with i_B;

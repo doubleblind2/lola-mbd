@@ -1,0 +1,39 @@
+in dx: Real;
+in dy: Real;
+
+def x: Real;
+def y: Real;
+x = x[-1,0] + dx;
+y = y[-1,0] + dy;
+
+def col: Bool;
+#def Fcol: Bool;
+col = ((x > 10) && (y > 10) && (x < 15) && (y < 15)) ||
+      ((x > -10) && (y > -10) && (x < -15) && (y < -15));
+#Fcol = col || Fcol[1,false];
+
+def validDx: Real;
+def validDy: Real;
+validDx = dx[1,0];
+validDy = dy[1,0];
+
+out x;
+out y;
+out col;
+out validDx;
+out validDy;
+
+
+# Assumptions
+
+def maxVelocity: Bool;
+maxVelocity = (dx <= 5) && (dx >= -5) && (dy <= 5) && (dy >= -5);
+
+def maxChange: Bool;
+maxChange = ((dx - dx[-1,0]) <= 1) && ((dx - dx[-1,0]) >= -1) && ((dy - dy[-1,0]) <= 1) && ((dy - dy[-1,0]) >= -1);
+
+def bounds: Bool;
+bounds = (x >= -20) && (x <= 20) && (y >= -20) && (y <= 20);
+
+def ASSUMPTION: Bool;
+ASSUMPTION = maxVelocity && maxChange && (!col) && bounds;

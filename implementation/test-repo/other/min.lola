@@ -1,0 +1,11 @@
+in i: Bool;
+in e: Real;
+in s: Bool;
+
+def crit: Bool;
+crit = crit[1, false] || ((!i) && (e < 10));
+
+def ASSUMPTION: Bool;
+ASSUMPTION = ((!i) -> (!i[1, false])) && (s || (e[-1, 110] - e) >= 10);
+
+out crit;

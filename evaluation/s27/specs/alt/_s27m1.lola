@@ -1,0 +1,26 @@
+in i1: Bool; %0
+in i2: Bool; %1
+in i3: Bool; %2
+in i4: Bool; %3
+
+def o1: Bool; %8
+def o2: Bool; %15
+def o3: Bool; %16
+def o4: Bool; %9
+def o5: Bool; %10
+def o6: Bool; %11
+def o7: Bool; %12
+def o8: Bool; %13
+
+def t: Real = t[-1,-1] + 1;
+
+o1 = !i1 && o6[-1,false]; %8
+o2 = o7 || o1; %15
+o3 = i4 || o1; %16
+o4 = !(o2 && o3); %9
+o5 = !(!i1 || o6); %10
+o6 = !(o5[-1,false] || o4); %11
+o7 = !(i2 || o8[-1,false]); %12
+o8 = !(i3 || o7); %13
+
+out o6;

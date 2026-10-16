@@ -1,0 +1,52 @@
+in x: Real;
+in y: Real;
+
+def dx: Real;
+def dy: Real;
+
+def ddx: Real;
+def ddy: Real;
+
+def cx: Real;
+def cy: Real;
+
+cx = x;
+cy = y;
+
+dx = x - cx[-1,0];
+dy = y - cy[-1,0];
+
+ddx = dx - dx[-1,0];
+ddy = dy - dy[-1,0];
+
+def xn: Real;
+def yn: Real;
+
+xn = x[1,0]; 
+yn = y[1,0];
+
+def dxn: Real;
+def dyn: Real;
+
+dxn = dx[1,0]; 
+dyn = dy[1,0];
+
+#def ddxn: Real;
+#def ddyn: Real;
+
+#ddxn = ddx[1,0]; 
+#ddyn = ddy[1,0];
+
+#out xn;
+#out yn;
+
+out x;
+out y;
+
+out cx;
+out cy;
+
+def ASSUMPTION: Bool;
+ASSUMPTION = (dx <= 3) && (dy <= 3) && (dx >= -3) && (dy >= -3) && 
+             (ddx <= 1) && (ddy <= 1) && (ddx >= -1) && (ddy >= -1) &&
+             !((x < 20) && (x > 8) && (y < 20) && (y > 8));

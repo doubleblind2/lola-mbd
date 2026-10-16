@@ -1,0 +1,10 @@
+def a: Real;
+def b: Real;
+def ff: Bool;
+
+ff = false;
+a = a[-1, 0] + 1;
+b = if (ff[1, true]) then a else b[1, 0];
+
+out a;
+out b;

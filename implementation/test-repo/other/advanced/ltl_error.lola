@@ -1,0 +1,16 @@
+in p: Bool;
+in q: Bool;
+
+def Fp: Bool;
+def qAFp: Bool;
+def OqAFp: Bool;
+def piOqAFp: Bool;
+def GpiOqAFp: Bool;
+
+Fp = p || p[1,false];
+qAFp = q && Fp;
+OqAFp = qAFp || qAFp[-1,false];
+piOqAFp = p -> OqAFp;
+GpiOqAFp = piOqAFp && GpiOqAFp[1,true];
+
+out GpiOqAFp;

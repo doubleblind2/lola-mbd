@@ -1,0 +1,20 @@
+in i1: Bool; %1
+in i2: Bool; %2
+in i3: Bool; %3
+in i4: Bool; %6
+in i5: Bool; %7
+
+def o1: Bool = false; %10
+def o2: Bool = !(i3 && i4); %11
+def o3: Bool = !(i2 && o2); %16
+def o4: Bool = !(o2 && i5); %19
+def o5: Bool = !(o1 && o3); %22
+def o6: Bool = !(o3 && o4); %23
+
+out i1; %1
+out i2; %2
+out i3; %3
+out i4; %6
+out i5; %7
+out o5;
+out o6;

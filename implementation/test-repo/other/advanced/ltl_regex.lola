@@ -1,0 +1,26 @@
+in p: Bool;
+in q: Bool;
+
+def pq: Bool;
+def npSnq: Bool;
+def qnpSnq: Bool;
+def OqnpSnq: Bool;
+def pqiOqnpSnq: Bool;
+def GpqiOqnpSnq: Bool;
+def ASSUMPTION: Bool;
+
+pq = p && q[1,false];                                   # pq
+npSnq = (!q) || ((!p) && npSnq[1,false]);               # (!p)*(!q)
+qnpSnq = q && npSnq[1,false];                           # q(!p)*(!q)
+OqnpSnq = qnpSnq || OqnpSnq[-1,false];                  # O(q(!p)*(!q))
+pqiOqnpSnq = pq -> OqnpSnq;                             # pq -> O(q(!p)*(!q))
+GpqiOqnpSnq = pqiOqnpSnq && GpqiOqnpSnq[1,true];        # G(pq -> O(q(!p)*(!q)))
+
+ASSUMPTION = !(p && q);
+
+# out pq;
+# out npSnq;
+# out qnpSnq;
+# out OqnpSnq;
+# out pqiOqnpSnq;
+out GpqiOqnpSnq;

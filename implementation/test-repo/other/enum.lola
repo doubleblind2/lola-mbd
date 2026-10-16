@@ -1,0 +1,8 @@
+enum Ex1 {A, B, C, D};
+enum Ex2 {X, Y, Z};
+
+in i1: Ex1;
+in i2: Ex2;
+
+def a: Ex1 = if i2 == X then i1 else C;
+out a;

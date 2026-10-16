@@ -1,0 +1,7 @@
+in p: Bool;
+in q: Bool;
+
+def fq: Bool = q || fq[1,false];
+out fq;
+
+def ASSUMPTION: Bool = p -> q[5,false];

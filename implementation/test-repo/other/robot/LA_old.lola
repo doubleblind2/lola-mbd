@@ -1,0 +1,38 @@
+in dx: Real;
+in dy: Real;
+
+def x: Real;
+def y: Real;
+x = x[-1,0] + dx;
+y = y[-1,0] + dy;
+
+def col: Bool;
+col = (x >= 40) && (x <= 70) && (y >= 20) && (y <= 40);
+
+def colStraight: Bool;
+colStraight = ((dx[1,0] == dx) && (dy[1,0] == dy)) -> col[1,false];
+
+def FcolStraight: Bool;
+FcolStraight = colStraight || FcolStraight[1, false]; # does not work because dx and dy can be any inputs in the next step
+
+out x;
+out y;
+out col;
+out colStraight;
+out FcolStraight;
+
+
+#Assumptions
+
+def maxVelocity: Bool;
+maxVelocity = (dx <= 7) && (dy <= 7); # 5 * sqrt(2) ~ 7
+
+def xChangeAbs: Real;
+def yChangeAbs: Real; 
+def maxChange: Bool;
+xChangeAbs = if ((dx - dx[-1,0]) < 0) then -(dx - dx[-1,0]) else (dx - dx[-1,0]);
+xChangeAbs = if ((dy - dy[-1,0]) < 0) then -(dy - dy[-1,0]) else (dy - dy[-1,0]);
+maxChange = (xChangeAbs <= 1) && (yChangeAbs <= 1); 
+
+def ASSUMPTION: Bool;
+ASSUMPTION = maxVelocity && maxChange;

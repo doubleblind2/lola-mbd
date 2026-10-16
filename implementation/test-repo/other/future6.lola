@@ -1,0 +1,19 @@
+in i1 : Real;
+in i2 : Bool;
+in i3 : Real;
+
+def x : Real;
+x = if i2 then 150 else x[1,0] + i1;
+
+def fi2 : Bool;
+fi2 = i2 || fi2[1,false];
+
+def v: Bool;
+v = (x <= i3) && fi2;
+
+def ASSUMPTION: Bool;
+ASSUMPTION = (i1 >= 0);
+
+out x;
+out fi2;
+out v;

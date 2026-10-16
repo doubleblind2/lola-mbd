@@ -1,0 +1,45 @@
+def t: Real = t[-1,-1] + 1;
+
+in g0: Bool;
+in g1: Bool;
+in g2: Bool;
+in g3: Bool;
+
+def g5: Bool;
+def g6: Bool;
+def g7: Bool;
+def g14: Bool;
+def g17: Bool;
+def g8: Bool;
+def g15: Bool;
+def g16: Bool;
+def g9: Bool;
+def g10: Bool;
+def g11: Bool;
+def g12: Bool;
+def g13: Bool;
+
+g5 = if (t < 3) then g10[-1,false] else false;
+g6 = g11[-1,false];
+g7 = g13[-1,false];
+
+g14 = !g0;
+g17 = !g11;
+
+g8 = g14 && g6;
+
+g15 = g12 || g8;
+g16 = g3 || g8;
+
+g9 = !(g16 && g15);
+
+g10 = !(g14 || g11);
+g11 = !(g5 || g9);
+g12 = !(g1 || g7);
+g13 = !(g2 || g12);
+
+out g0;
+out g1;
+out g2;
+out g3;
+out g17;

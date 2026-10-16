@@ -1,0 +1,55 @@
+internal y2_R: Real;
+internal y4_R: Real;
+internal y9_R: Real;
+
+internal x2_R: Real;
+internal x4_R: Real;
+internal x9_R: Real;
+
+internal line2: Bool;
+internal line4: Bool;
+internal line9: Bool;
+
+y2_R linked with line2;
+y4_R linked with line4;
+y9_R linked with line9;
+x2_R linked with line2;
+x4_R linked with line4;
+x9_R linked with line9;
+
+def ff: Bool = false;
+def traceEnd: Bool = ff[+1,true];
+
+def ASSUMPTION: Bool =
+
+(line2 || line4 || line9) && !(line2 && line4) && !(line2 && line9) && !(line4 && line9)
+
+&&
+
+((y9_R >= 5) && (y2_R == 0) && (line9 == traceEnd))
+
+&&
+
+((line4 && x4_R <= 0) -> (line9[+1,false] && x9_R[+1,0] == x4_R && y9_R[+1,0] == y4_R))
+
+&&
+
+((line4 && x4_R > 0) -> (line4[+1,false] && x4_R[+1,0] == x4_R - 1 && y4_R[+1,0] == y4_R + 1))
+
+&&
+
+(line2 -> ((line4[+1,false] && x4_R[+1,0] == x2_R && y4_R[+1,0] == y2_R) || (line2[+1,false] && x2_R[+1,0] == x2_R && y2_R[+1,0] == y2_R)));
+
+out line2;
+out line4;
+out line9;
+
+out y9_R;
+out x9_R;
+
+out y4_R;
+out x4_R;
+
+out y2_R;
+out x2_R;
+

@@ -1,0 +1,8 @@
+in input: Real;
+in threshold: Real;
+
+def last5Values: Real = last5Values[-1, 0] + input - input[-5, 0];
+def greater: Bool = (last5Values > threshold);
+
+out last5Values;
+out greater;

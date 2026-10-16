@@ -1,0 +1,13 @@
+.idea
+.bsp
+.attach*
+.bloop
+.metals
+.vscode
+project/*
+target
+bin
+
+!project/sbt-antlr4.sbt
+!project/plugins.sbt
+!bin/unaa-lola.jar

@@ -1,0 +1,53 @@
+in dx: Real;
+in dy: Real;
+
+in dxRob: Real;
+in dyRob: Real;
+
+def x: Real;
+def y: Real;
+x = x[-1,0] + dx;
+y = y[-1,0] + dy;
+
+def xRob: Real;
+def yRob: Real;
+xRob = xRob[-1,0] + dxRob;
+yRob = yRob[-1,0] + dyRob;
+
+def col: Bool;
+def Fcol: Bool;
+col = (x >= (xRob - 3)) && (x <= (xRob + 3)) && (y >= (yRob - 3)) && (y <= (yRob + 3));
+Fcol = col || Fcol[1,false];
+
+def validDx: Real;
+def validDy: Real;
+validDx = dx[1,0];
+validDy = dy[1,0];
+
+out x;
+out y;
+out col;
+out validDx;
+out validDy;
+
+
+#Assumptions
+
+def maxVelocity: Bool;
+maxVelocity = (dx <= 3) && (dx >= -3) && (dy <= 3) && (dy >= -3) && 
+              (dxRob <= 3) && (dxRob >= -3) && (dyRob <= 3) && (dyRob >= -3);
+
+def xChangeAbs: Real;
+def yChangeAbs: Real;
+def xChangeAbsRob: Real;
+def yChangeAbsRob: Real; 
+def maxChange: Bool;
+xChangeAbs = if ((dx - dx[-1,0]) < 0) then -(dx - dx[-1,0]) else (dx - dx[-1,0]);
+yChangeAbs = if ((dy - dy[-1,0]) < 0) then -(dy - dy[-1,0]) else (dy - dy[-1,0]);
+xChangeAbsRob = if ((dxRob - dxRob[-1,0]) < 0) then -(dxRob - dxRob[-1,0]) else (dxRob - dxRob[-1,0]);
+yChangeAbsRob = if ((dyRob - dyRob[-1,0]) < 0) then -(dyRob - dyRob[-1,0]) else (dyRob - dyRob[-1,0]);
+maxChange = (xChangeAbs <= 1) && (yChangeAbs <= 1) &&
+            (xChangeAbsRob <= 1) && (yChangeAbsRob <= 1);
+
+def ASSUMPTION: Bool;
+ASSUMPTION = maxVelocity && maxChange && !Fcol;

@@ -1,0 +1,16 @@
+def a: Real;
+def b: Real;
+def c: Real;
+def d: Real;
+
+in x: Real;
+
+a = if (a[1, 0] >= 3) then 0 else a[1, 0] + 1;
+b = a[1, 0] + x;
+c = d[-1, 0];
+d = a[1,0];
+
+out a;
+out b;
+out c;
+out d;

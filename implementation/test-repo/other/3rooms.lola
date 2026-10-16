@@ -1,0 +1,54 @@
+
+in r0: Bool;
+in r1: Bool;
+in r2: Bool;
+
+in stairs: Bool;
+in e: Real;
+
+def oneRoom: Bool;
+oneRoom = (r0 || r1 || r2) && (r0 -> ((!r1) && (!r2))) && (r1 -> ((!r0) && (!r2))) && (r2 -> ((!r0) && (!r1)));
+
+def transitions: Bool;
+transitions = (r0 -> (r0[1, true] || r1[1, true])) && (r1 -> (r0[1, true] || r1[1, true] || r2[1, true])) && (r2 -> (r1[1, true] || r2[1, true]));
+
+def energy: Bool;
+energy = (((r1[-1, false] && r2) || (r2[-1, false] && r1)) <-> stairs) && (stairs -> ((e[-1, 1000] - e) >= 10)) && ((!stairs) -> ((e[-1, 1000] - e) >= 5));
+
+def ASSUMPTION: Bool;
+ASSUMPTION = oneRoom && transitions && energy;
+
+def critical: Bool;
+critical = (e < 10) && !r0;
+
+def Fcritical: Bool;
+Fcritical = critical || Fcritical[1, false];
+
+def r0A: Bool;
+def r1A: Bool;
+def r2A: Bool;
+r0A = r0[1, false] -> Fcritical;
+r1A = r1[1, false] -> Fcritical;
+r2A = r2[1, false] -> Fcritical;
+
+out Fcritical;
+out critical;
+out r0A;
+out r1A;
+out r2A;
+out e;
+
+def o0: Bool;
+def o1: Bool;
+def o2: Bool;
+def oStairs: Bool;
+
+o0 = r0;
+o1 = r1;
+o2 = r2;
+oStairs = stairs;
+
+out o0;
+out o1;
+out o2;
+out oStairs;

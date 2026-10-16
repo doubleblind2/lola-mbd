@@ -1,0 +1,75 @@
+in l : Real;
+in r : Real;
+in d: Real;
+
+in lw: Real;
+
+def crash: Bool;
+crash = (d < 2) && (((l <= 2) && (-2 <= l)) || ((r <= 2) && (-2 <= r)) || ((l <= -2) && (r >= 2)));
+
+def fcrash: Bool;
+fcrash = crash || fcrash[1,false];
+
+def ld : Real;
+ld = (l - l[-1,0]);
+def rd : Real;
+rd = (r - r[-1,0]);
+def dd: Real;
+dd = (d[-1,10000] - d);
+
+def nearing: Bool;
+nearing = (ld == (0.7 * lw)) && (rd == (0.7 * lw)) && (dd >= 0.5);
+
+def gnearing: Bool;
+gnearing = nearing && gnearing[1,true];
+
+#def angle: Bool;
+#angle = (lw <= 1) && (lw >= -1);
+
+#def gangle: Bool;
+#gangle = angle && gangle[1,true];
+
+#def ngangle: Bool;
+#ngangle = gangle[2,true];
+
+def ASSUMPTION: Bool;
+ASSUMPTION = (lw <= 2.5) && (lw >= -2.5) && (l <= r) && ((r - l) <= 15) && (r < 30) && (l > -30);
+
+
+
+# def nextLW: Real;
+# nextLW = lw[1,0];
+
+# out nextLW;
+
+# Query nextLW under gnearing, !fcrash
+
+def l3 : Bool;
+l3 = gnearing[1,true] && (!fcrash) && (lw[1,0] == 2.5);
+out l3;
+
+def l2 : Bool;
+l2 = gnearing[1,true] && (!fcrash) && (lw[1,0] == 1.5);
+out l2;
+
+def l1 : Bool;
+l1 = gnearing[1,true] && (!fcrash) && (lw[1,0] == 0.5);
+out l1;
+
+def l0 : Bool;
+l0 = gnearing[1,true] && (!fcrash) && (lw[1,0] == 0);
+out l0;
+
+def lM1 : Bool;
+lM1 = gnearing[1,true] && (!fcrash) && (lw[1,0] == -0.5);
+out lM1;
+
+def lM2 : Bool;
+lM2 = gnearing[1,true] && (!fcrash) && (lw[1,0] == -1.5);
+out lM2;
+
+def lM3 : Bool;
+lM3 = gnearing[1,true] && (!fcrash) && (lw[1,0] == -2.5);
+out lM3;
+
+out nearing;

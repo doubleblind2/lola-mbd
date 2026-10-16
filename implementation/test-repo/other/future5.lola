@@ -1,0 +1,15 @@
+in x: Bool;
+
+def tt: Bool;
+def a: Bool;
+def b: Bool;
+def c: Bool;
+
+tt = true;
+a = a[-1,false] || x;
+b = if tt[1,false] then b[1,false] else a;
+c = x -> b;
+
+out a;
+out b;
+out c;

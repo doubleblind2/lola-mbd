@@ -1,0 +1,9 @@
+in x: Bool;
+
+def a: Bool = a[-1, false] || x;
+def b: Bool = b[-1, true] && !x;
+def c: Bool = a && b;
+
+out a;
+out b;
+out c;

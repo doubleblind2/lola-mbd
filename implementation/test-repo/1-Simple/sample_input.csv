@@ -1,0 +1,11 @@
+x,y
+4,true
+5,false
+2,true
+2,false
+[1,4],true
+[2,20],false
+[1,5],?
+?,true
+?,false
+?,?

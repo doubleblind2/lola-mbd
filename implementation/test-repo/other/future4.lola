@@ -1,0 +1,27 @@
+in x: Real;
+
+def end: Real;
+def end2: Real;
+
+def ff: Bool;
+def a: Real;
+def b: Real;
+def c: Real;
+
+ff = false;
+end = end[1, 0] + x;
+end2 = end2[1, -42] + 2.0 * x;
+
+a = end[1,0];
+b = end2[1,0];
+
+c = (2.0 * a) - b;
+
+def ASSUMPTION: Bool;
+ASSUMPTION = (x >= 0) && (x <= 10);
+
+out end;
+out end2;
+out a;
+out b;
+out c;

@@ -1,0 +1,12 @@
+in i: Real;
+in time: Real;
+
+def cnt: Real = cnt[-1,0] + (if (i == 42) then 1 else 0);
+
+def lastTime: Real = if (i==42) then time else lastTime[-1,0];
+
+def ASSUMPTION: Bool = !((i == 42) && ((time - lastTime[-1, -5]) <= 5));
+
+out time;
+out i;
+out cnt;

@@ -1,0 +1,37 @@
+in dx: Real;
+in dy: Real;
+
+def x: Real;
+def y: Real;
+x = x[-1,0] + dx;
+y = y[-1,0] + dy;
+
+def col: Bool;
+col = (x >= 40) && (x <= 70) && (y >= 20) && (y <= 40);
+
+def colStraight: Bool;
+colStraight = ((dx[1,0] == dx) && (dy[1,0] == dy)) -> col[1,false];
+
+def FcolStraight: Bool;
+FcolStraight = colStraight || FcolStraight[1, false]; # does not work because dx and dy can be any inputs in the next step
+
+out x;
+out y;
+out col;
+out colStraight;
+out FcolStraight;
+
+
+#Assumptions
+
+def maxVelocity: Bool;
+maxVelocity = ((dx * dx) + (dy * dy)) <= (5 * 5); # max speed possible is 5
+
+# how to do this without trigonometry or division?
+# would be arccos(((dx * dx[-1,0]) + (dy * dy[-1,0])) / (sqrt((dx * dx) + (dy * dy)) * sqrt((dx[-1,0] * dx[-1,0]) + (dy[-1,0] * dy[-1,0])))) which is arccos(dot product, |v| * |v[-1]|)
+# alternative: atan2((dx * dY[-1,0]) - (dy * dx[-1,0]), (dx * dx[-1,0]) + (dy * dy[-1,0])) which is atan2(cross product, dot product)
+def maxAngleChange: Bool;
+maxAngleChange = true; 
+
+def ASSUMPTION: Bool;
+ASSUMPTION = maxVelocity && maxAngleChange;

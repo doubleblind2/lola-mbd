@@ -1,0 +1,8 @@
+in i1: Real;
+in i2: Real;
+
+internal a: Real;
+
+def ASSUMPTION: Bool = i1 <= a && a <= i2;
+
+out a from -10 to 10 by 1;

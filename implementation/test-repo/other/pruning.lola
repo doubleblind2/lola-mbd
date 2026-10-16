@@ -1,0 +1,9 @@
+in x: Real;
+
+def a: Real;
+a = a[-1,0] + x;
+
+def ASSUMPTION: Bool;
+ASSUMPTION = x > 0;
+
+out a;

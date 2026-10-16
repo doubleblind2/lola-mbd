@@ -1,0 +1,10 @@
+in dx: Real;
+
+def x: Real;
+x = x[-1,0] + dx;
+
+out x;
+
+def ASSUMPTION: Bool;
+ASSUMPTION = ((dx - dx[-1,0]) < 1) && ((dx - dx[-1,0]) > -1);
+

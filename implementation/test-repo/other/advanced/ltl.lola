@@ -1,0 +1,9 @@
+in p: Bool;
+
+def Op: Bool;
+def GOp: Bool;
+
+Op = p || Op[-1,false];
+GOp = Op && GOp[1,true];
+
+out GOp;

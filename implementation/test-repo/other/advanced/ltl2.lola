@@ -1,0 +1,11 @@
+in p: Bool;
+
+def Xp: Bool;
+def OXp: Bool;
+def GOXp: Bool;
+
+Xp = p[1,false];
+OXp = Xp || OXp[-1,false];
+GOXp = OXp && GOXp[1,true];
+
+out GOXp;

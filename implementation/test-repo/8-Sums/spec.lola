@@ -1,0 +1,13 @@
+in i: Real;
+in sep: Bool;
+
+def a: Real = a[-1,0] + if (sep) then i else 0;
+def b: Real = b[-1,0] + if (!sep) then i else 0;
+def c: Real = c[-1,0] + i;
+
+def error: Real = c - (a + b);
+
+out a;
+out b;
+out c;
+out error;
